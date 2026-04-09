@@ -1,0 +1,7 @@
+path: ./data/processed
+train: train/images
+val: val/images
+test: test/images
+
+nc: 8
+names: ['truck', 'trailer', 'container', 'forklift', 'person', 'helmet', 'safety_vest', 'car']
