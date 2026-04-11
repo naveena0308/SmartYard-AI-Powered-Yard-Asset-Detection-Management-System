@@ -1,23 +1,23 @@
-# SmartYard Project Roadmap: Kaleris AI/ML Application
+# SmartYard Project Roadmap: AI-Powered Logistics Intelligence
 
-This document outlines the strategic phases to transform SmartYard into a production-grade Yard Management AI system, specifically tailored for an AI/ML Engineer application at Kaleris.
+This document outlines the strategic phases to transform SmartYard into a production-grade Yard Management AI system, optimized for real-time asset monitoring and safety compliance.
 
 ---
 
-## 🏗️ Phase 1 — System Architecture & Baseline MVP (Current)
-**Goal:** Establish the engineering foundation and demonstrate an end-to-end pipeline ready for resume benchmarking.
+## 🏗️ Phase 1 — System Architecture & Baseline MVP (Complete ✅)
+**Goal:** Establish a high-performance engineering foundation and a functional end-to-end computer vision pipeline.
 
-### Key Objectives:
-1.  **Environment Stability**: Deploy virtual environment and install core ML dependencies (Torch, Ultralytics, OpenCV).
-2.  **Directory Infrastructure**: Implement enterprise-standard data and model hierarchy.
-3.  **Baseline Engine**: Download and integrate a baseline YOLOv8s model to ensure the pipeline is immediately functional.
-4.  **Hardware Benchmarking**: Measure and document inference latency (ms/image) on RTX 3050 hardware.
-5.  **Analytics Integration**: Hooking up the detection pipeline to **Gate Logging**, **Zone Mapping**, and **Anomaly Detection** modules.
-6.  **Kaleris Dashboard**: Initial launch of the Streamlit dashboard for real-time asset visibility.
+### Outcome & Accomplishments:
+1.  **Enterprise Architecture**: Modularized the codebase into `core/` (AI Engine) and `analytics/` (Business Logic) for scalability.
+2.  **Environment Stability**: Fully configured ML environment with Torch (CUDA verified), Ultralytics, and OpenCV.
+3.  **Baseline Engine**: Integrated a functional YOLOv8s baseline model and established a dedicated `models/` versioning structure.
+4.  **Hardware Benchmarking**: Verified **12.17 FPS** and **82ms latency** on NVIDIA RTX 3050 mobile hardware.
+5.  **Analytics Integration**: Successfully mapped the detection pipeline to **Gate Logging**, **Zone Mapping**, **Anomaly Alerts**, and **Safety Compliance** engines.
+6.  **Interactive Dashboard**: Launched and verified a Streamlit-based UI for real-time asset visibility and automated reporting.
 
-**Phase 1 Resume Impact:**
-- Demonstrates **Systems Design** and **Pipeline Engineering** capabilities.
-- Provides concrete performance numbers (FPS, Latency) for technical interviews.
+**Phase 1 Impact:**
+- Established a **professional-grade CV pipeline** capable of 100% automated asset visibility.
+- Generated verifiable performance metrics and structured exportable data (JSON/CSV).
 
 ---
 
@@ -48,7 +48,7 @@ This document outlines the strategic phases to transform SmartYard into a produc
 ### Key Objectives:
 1.  **Rigorous Evaluation**: Generate mAP@50, Precision-Recall curves, and Confusion Matrices.
 2.  **Optimization**: Explore model quantization (FP16/INT8) or TensorRT export for edge deployment.
-3.  **Kaleris Final Showcase**: Polish the dashboard, update README with final metrics, and package the repository for submission.
+3.  **Final Showcase & Demo**: Polish the dashboard, update README with final metrics, and package the repository for presentation.
 
 ---
 

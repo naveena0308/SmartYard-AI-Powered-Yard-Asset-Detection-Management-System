@@ -1,6 +1,6 @@
 {
   "image": "yard_test_1.png",
-  "timestamp": "2026-04-11 21:21:01",
+  "timestamp": "2026-04-11 23:50:07",
   "total_assets_detected": 13,
   "asset_count": {
     "truck": 7,
@@ -36,21 +36,21 @@
   },
   "alerts": [
     {
-      "alert": "\u26a0\ufe0f truck detected in Zone_C_Forklift_Lane",
+      "alert": "[Violation] truck detected in Zone_C_Forklift_Lane",
       "severity": "HIGH",
       "zone": "Zone_C_Forklift_Lane",
       "asset": "truck",
       "confidence": 0.9074
     },
     {
-      "alert": "\u26a0\ufe0f truck detected in Zone_C_Forklift_Lane",
+      "alert": "[Violation] truck detected in Zone_C_Forklift_Lane",
       "severity": "HIGH",
       "zone": "Zone_C_Forklift_Lane",
       "asset": "truck",
       "confidence": 0.8153
     },
     {
-      "alert": "\u26a0\ufe0f truck detected in Zone_C_Forklift_Lane",
+      "alert": "[Violation] truck detected in Zone_C_Forklift_Lane",
       "severity": "HIGH",
       "zone": "Zone_C_Forklift_Lane",
       "asset": "truck",
@@ -67,58 +67,58 @@
   },
   "gate_entries": [
     {
-      "entry_id": "8116C950",
+      "entry_id": "FA984D5A",
       "asset_type": "truck",
       "confidence": 0.91,
-      "timestamp": "2026-04-11 21:21:01",
+      "timestamp": "2026-04-11 23:50:07",
       "image_source": "yard_test_1.png",
       "bbox": "[356.19, 590.4, 716.82, 823.92]"
     },
     {
-      "entry_id": "3BB79BCD",
+      "entry_id": "9C528076",
       "asset_type": "truck",
       "confidence": 0.91,
-      "timestamp": "2026-04-11 21:21:01",
+      "timestamp": "2026-04-11 23:50:07",
       "image_source": "yard_test_1.png",
       "bbox": "[0.34, 466.13, 237.22, 633.93]"
     },
     {
-      "entry_id": "15D404C8",
+      "entry_id": "8739C7C2",
       "asset_type": "truck",
       "confidence": 0.88,
-      "timestamp": "2026-04-11 21:21:01",
+      "timestamp": "2026-04-11 23:50:07",
       "image_source": "yard_test_1.png",
       "bbox": "[816.98, 492.23, 1023.17, 672.5]"
     },
     {
-      "entry_id": "E9C4CA4A",
+      "entry_id": "BF9BB0F1",
       "asset_type": "truck",
       "confidence": 0.82,
-      "timestamp": "2026-04-11 21:21:01",
+      "timestamp": "2026-04-11 23:50:07",
       "image_source": "yard_test_1.png",
       "bbox": "[37.13, 407.07, 342.74, 519.7]"
     },
     {
-      "entry_id": "E9E166E9",
+      "entry_id": "4C1BE55F",
       "asset_type": "truck",
       "confidence": 0.81,
-      "timestamp": "2026-04-11 21:21:01",
+      "timestamp": "2026-04-11 23:50:07",
       "image_source": "yard_test_1.png",
       "bbox": "[685.41, 394.17, 967.34, 498.93]"
     },
     {
-      "entry_id": "C6818FF6",
+      "entry_id": "FAD32D23",
       "asset_type": "truck",
       "confidence": 0.72,
-      "timestamp": "2026-04-11 21:21:01",
+      "timestamp": "2026-04-11 23:50:07",
       "image_source": "yard_test_1.png",
       "bbox": "[306.17, 399.85, 373.09, 481.43]"
     },
     {
-      "entry_id": "B0C83CE7",
+      "entry_id": "D1E749E9",
       "asset_type": "truck",
       "confidence": 0.67,
-      "timestamp": "2026-04-11 21:21:01",
+      "timestamp": "2026-04-11 23:50:07",
       "image_source": "yard_test_1.png",
       "bbox": "[761.06, 433.05, 1018.28, 598.15]"
     }
