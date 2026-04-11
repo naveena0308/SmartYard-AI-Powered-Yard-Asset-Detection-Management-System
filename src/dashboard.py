@@ -11,13 +11,13 @@ from PIL import Image
 import tempfile
 
 # Import SmartYard modules
-from detect import run_detection
-from annotate import annotate_image
-from zone_mapper import load_zones, map_detections_to_zones, calculate_zone_occupancy
-from anomaly import check_anomalies
-from compliance import check_compliance
-from report import generate_report
-from gate_logger import log_gate_entry
+from src.core.detect import run_detection
+from src.analytics.annotate import annotate_image
+from src.analytics.zone_mapper import load_zones, map_detections_to_zones, calculate_zone_occupancy
+from src.analytics.anomaly import check_anomalies
+from src.analytics.compliance import check_compliance
+from src.analytics.report import generate_report
+from src.analytics.gate_logger import log_gate_entry
 
 
 # Page configuration

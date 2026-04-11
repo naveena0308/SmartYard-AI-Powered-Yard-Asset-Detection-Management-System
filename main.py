@@ -8,14 +8,14 @@ import json
 from pathlib import Path
 
 # Import SmartYard modules
-from src.detect import run_detection, run_batch_detection
-from src.annotate import annotate_image
-from src.zone_mapper import load_zones, map_detections_to_zones, calculate_zone_occupancy
-from src.anomaly import check_anomalies
-from src.compliance import check_compliance
-from src.gate_logger import log_gate_entry
-from src.report import generate_report, generate_batch_reports
-from src.heatmap import create_heatmap_from_image
+from src.core.detect import run_detection, run_batch_detection
+from src.analytics.annotate import annotate_image
+from src.analytics.zone_mapper import load_zones, map_detections_to_zones, calculate_zone_occupancy
+from src.analytics.anomaly import check_anomalies
+from src.analytics.compliance import check_compliance
+from src.analytics.gate_logger import log_gate_entry
+from src.analytics.report import generate_report, generate_batch_reports
+from src.analytics.heatmap import create_heatmap_from_image
 
 
 def run_pipeline_single(image_path, output_dir='outputs'):
@@ -36,18 +36,18 @@ def run_pipeline_single(image_path, output_dir='outputs'):
     image_name = os.path.basename(image_path)
     
     # Step 1: Run detection
-    print("\n1️⃣ Running object detection...")
+    print("\n[Step 1] Running object detection...")
     detections = run_detection(image_path)
     print(f"   Detected {len(detections)} objects")
     
     # Step 2: Annotate image
-    print("\n2️⃣ Annotating image...")
+    print("\n[Step 2] Annotating image...")
     os.makedirs(f'{output_dir}/annotated', exist_ok=True)
     output_path = f"{output_dir}/annotated/{image_name}"
     annotated = annotate_image(image_path, detections, output_path)
     
     # Step 3: Load zones and map detections
-    print("\n3️⃣ Mapping assets to zones...")
+    print("\n[Step 3] Mapping assets to zones...")
     zones = load_zones()
     zone_assets = map_detections_to_zones(detections, zones)
     zone_occupancy = calculate_zone_occupancy(zone_assets, zones)
@@ -56,22 +56,22 @@ def run_pipeline_single(image_path, output_dir='outputs'):
     print(f"   Assets mapped to {len(active_zones)} zones")
     
     # Step 4: Check anomalies
-    print("\n4️⃣ Checking for anomalies...")
+    print("\n[Step 4] Checking for anomalies...")
     alerts = check_anomalies(zone_assets)
     print(f"   Found {len(alerts)} anomalies")
     
     # Step 5: Check compliance
-    print("\n5️⃣ Checking safety compliance...")
+    print("\n[Step 5] Checking safety compliance...")
     compliance = check_compliance(detections)
     print(f"   Compliance: {compliance['status']} ({compliance['compliance_score']})")
     
     # Step 6: Log gate entries
-    print("\n6️⃣ Logging gate entries...")
+    print("\n[Step 6] Logging gate entries...")
     gate_entries = log_gate_entry(detections, image_name)
     print(f"   Logged {len(gate_entries)} entries")
     
     # Step 7: Generate report
-    print("\n7️⃣ Generating report...")
+    print("\n[Step 7] Generating report...")
     report = generate_report(
         image_name=image_name,
         detections=detections,
@@ -82,13 +82,13 @@ def run_pipeline_single(image_path, output_dir='outputs'):
     )
     
     # Step 8: Generate heatmap (optional)
-    print("\n8️⃣ Generating heatmap...")
+    print("\n[Step 8] Generating heatmap...")
     try:
         create_heatmap_from_image(image_path, detections)
     except Exception as e:
         print(f"   Heatmap generation skipped: {e}")
     
-    print(f"\n✅ Pipeline complete for {image_name}")
+    print(f"\nPipeline complete for {image_name}")
     print(f"   Results saved to: {output_dir}")
     
     return {
@@ -204,7 +204,7 @@ def main():
     
     # Check if input exists
     if not os.path.exists(args.input):
-        print(f"❌ Input not found: {args.input}")
+        print(f"Input not found: {args.input}")
         print("\nPlease add test images to data/test_images/ or specify a valid path")
         return
     
