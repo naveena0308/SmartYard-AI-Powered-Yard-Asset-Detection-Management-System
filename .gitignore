@@ -37,6 +37,9 @@ models/*/
 data/raw/
 data/processed/
 data/annotations/
+Logistics-1/
+Truck-container-3/
+Yard-Management-System-1/
 
 # Outputs (keep for demo)
 # outputs/
