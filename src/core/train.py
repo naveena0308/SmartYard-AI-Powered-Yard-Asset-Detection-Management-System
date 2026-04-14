@@ -24,7 +24,7 @@ def train_model(
     data_config='config/dataset.yaml',
     epochs=50,
     img_size=640,
-    batch_size=8,
+    batch_size=4,
     device=0,
     patience=10,
     project='models',
@@ -69,13 +69,13 @@ def train_model(
         save=True,
         project=project,
         name=name,
-        # Optional augmentations
-        # augment=True,  # Enable if overfitting
-        # hsv_h=0.015,   # HSV-Hue augmentation
-        # hsv_s=0.7,     # HSV-Saturation augmentation
-        # hsv_v=0.4,     # HSV-Value augmentation
-        # flipud=0.0,    # Vertical flip
-        # fliplr=0.5,    # Horizontal flip
+        # Default augmentations to help handle varying lighting/orientations
+        augment=True,
+        hsv_h=0.015,
+        hsv_s=0.7,
+        hsv_v=0.4,
+        flipud=0.0,
+        fliplr=0.5,
     )
     
     print("\n✅ Training complete!")
@@ -101,7 +101,7 @@ def main():
         data_config='config/dataset.yaml',
         epochs=50,
         img_size=640,
-        batch_size=8,  # Reduce to 4 if GPU runs out of memory
+        batch_size=4,  # Optimized for 4GB VRAM GPU
         device=0,      # Use GPU (set to 'cpu' if no GPU)
         patience=10,
         project='models',
